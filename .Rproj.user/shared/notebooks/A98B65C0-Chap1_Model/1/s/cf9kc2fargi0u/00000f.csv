@@ -1,0 +1,6 @@
+"0"," "
+"0","# Create a board that allows pickled models"
+"0","board = pins.board_folder('data/model', allow_pickle_read=True)"
+"0","print(board)"
+"1","<pins.boards.BaseBoard object at 0x0000023F19C04D60>
+"

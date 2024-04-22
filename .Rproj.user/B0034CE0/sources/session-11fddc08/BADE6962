@@ -1,0 +1,31 @@
+{
+    "id": "BADE6962",
+    "path": "~/378_FinalProject/Chap1_EDA.qmd",
+    "project_path": "Chap1_EDA.qmd",
+    "type": "quarto_markdown",
+    "hash": "3040407833",
+    "contents": "",
+    "dirty": true,
+    "created": 1709926705310.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "rmdVisualMode": "false",
+        "rmdVisualWrapConfigured": "true",
+        "source_window_id": "",
+        "Source": "Source",
+        "docOutlineVisible": "1",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "756:387",
+        "cursorPosition": "44,3",
+        "scrollLine": "20"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1713724111,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1713750991631,
+    "read_only": false,
+    "read_only_alternatives": []
+}

@@ -1,0 +1,11 @@
+"0","reticulate::repl_python()"
+"0","install_python(""fastapi"")"
+"2","Traceback (most recent call last):
+  File ""<string>"", line 1, in <module>
+NameError: name 'install_python' is not defined
+"
+"0","install_python(""uvicorn"")"
+"2","Traceback (most recent call last):
+  File ""<string>"", line 1, in <module>
+NameError: name 'install_python' is not defined
+"
