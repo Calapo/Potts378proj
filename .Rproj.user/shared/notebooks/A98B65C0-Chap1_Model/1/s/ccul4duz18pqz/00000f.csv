@@ -4,13 +4,11 @@
 "0","    "
 "0","# Recreate the VetiverModel and pin it to the board"
 "0","vetiver_pin_write(board, v, 'penguin_model')"
-"2","Model Cards provide a framework for transparent, responsible reporting. 
- Use the vetiver `.qmd` Quarto template as a place to start, 
- with vetiver.model_card()"
-"2","
+"2","Traceback (most recent call last):
+  File ""<string>"", line 1, in <module>
+NameError: name 'board' is not defined
 "
-"2","Writing pin:
-Name: 'penguin_model'
-Version: 20240420T175520Z-cf3d4"
-"2","
+"2","Traceback (most recent call last):
+  File ""<string>"", line 1, in <module>
+NameError: name 'board' is not defined
 "

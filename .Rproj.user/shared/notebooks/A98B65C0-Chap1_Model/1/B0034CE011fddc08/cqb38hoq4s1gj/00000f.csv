@@ -37,5 +37,7 @@
 "0","    print(""Response:"", response.json())"
 "0","    "
 "0",""
-"1","Repository 'Potts378proj' created successfully.
+"1","Failed to create repository.
+Status code: 422
+Response: {'message': 'Repository creation failed.', 'errors': [{'resource': 'Repository', 'code': 'custom', 'field': 'name', 'message': 'name already exists on this account'}], 'documentation_url': 'https://docs.github.com/rest/repos/repos#create-a-repository-for-the-authenticated-user'}
 "

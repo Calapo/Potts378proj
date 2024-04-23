@@ -1,3 +1,20 @@
+"0","from palmerpenguins import penguins"
+"0","from pandas import get_dummies"
+"0","import numpy as np"
+"0","from sklearn.linear_model import LinearRegression"
+"0","from sklearn import preprocessing"
+"0","```y"
+"2","  File ""<string>"", line 1
+    ```y
+    ^
+SyntaxError: invalid syntax
+"
+"0","```{python}"
+"2","  File ""<string>"", line 1
+    ```{python}
+    ^
+SyntaxError: invalid syntax
+"
 "0","from vetiver import VetiverModel"
 "0","from vetiver import VetiverAPI"
 "0",""
