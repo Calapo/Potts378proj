@@ -1,0 +1,25 @@
+project:
+  type: website
+
+website:
+  title: "378_FinalProject"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - href: Chap1_EDA.qmd
+        text: EDA
+      - href: Chap1_Model.qmd
+        text: Model
+
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+editor: visual
+

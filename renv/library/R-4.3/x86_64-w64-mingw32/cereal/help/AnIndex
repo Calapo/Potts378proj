@@ -1,0 +1,7 @@
+cereal-package	cereal-package
+cereal	cereal-package
+cereal_decode	cereal_decode
+cereal_details	cereal_details
+cereal_encode	cereal_encode
+cereal_from_json	cereal_to_json
+cereal_to_json	cereal_to_json

@@ -1,0 +1,49 @@
+axe-C5.0                Axing a C5.0.
+axe-KMeansCluster       Axing a KMeansCluster.
+axe-NaiveBayes          Axing a NaiveBayes.
+axe-bart                Axing a bart model.
+axe-coxph               Axing a coxph.
+axe-earth               Axing an earth object.
+axe-elnet               Axing an elnet.
+axe-flexsurvreg         Axing an flexsurvreg.
+axe-formula             Axing formulas.
+axe-function            Axing functions.
+axe-gam                 Axing a gam.
+axe-gausspr             Axing a gausspr.
+axe-glm                 Axing a glm.
+axe-glmnet              Axing a glmnet.
+axe-ipred               Axing a bagged tree.
+axe-kknn                Axing an kknn.
+axe-kproto              Axing a kproto.
+axe-ksvm                Axing a ksvm object.
+axe-lm                  Axing an lm.
+axe-mass                Axing a MASS discriminant analysis object.
+axe-mda                 Axing a mda.
+axe-model_fit           Axing an model_fit.
+axe-multnet             Axing an multnet.
+axe-nested_model_fit    Axing a nested_model_fit.
+axe-nnet                Axing a nnet.
+axe-pls                 Axing mixOmics models
+axe-randomForest        Axing an randomForest.
+axe-ranger              Axing an ranger.
+axe-rda                 Axing an rda.
+axe-recipe              Axing a recipe object.
+axe-rpart               Axing a rpart.
+axe-sclass              Axing a sclass object.
+axe-spark               Axing a spark object.
+axe-survreg             Axing an survreg.
+axe-survreg.penal       Axing an survreg.penal
+axe-terms               Axing for terms inputs.
+axe-train               Axing a train object.
+axe-train.recipe        Axing a train.recipe object.
+axe-xgb.Booster         Axing a xgb.Booster.
+axe-xrf                 Axing a xrf.
+axe_call                Axe a call.
+axe_ctrl                Axe controls.
+axe_data                Axe data.
+axe_env                 Axe an environment.
+axe_fitted              Axe fitted values.
+butcher                 Butcher an object.
+locate                  Locate part of an object.
+new_model_butcher       New axe functions for a modeling object.
+weigh                   Weigh the object.

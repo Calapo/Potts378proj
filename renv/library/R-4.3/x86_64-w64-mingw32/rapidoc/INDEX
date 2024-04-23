@@ -1,0 +1,5 @@
+rapidoc-package         rapidoc: Generates RapiDoc documentation from
+                        an OpenAPI Specification
+rapidoc_index           Path to Rapidoc Index
+rapidoc_path            Path to RapiDoc Resources
+rapidoc_spec            RapiDoc Index File with OpenAPI Path

@@ -1,0 +1,6 @@
+cereal_decode           Convert a JSON-serialized prototype to a vctrs
+                        prototype
+cereal_details          Find needed details for vctrs prototype
+cereal_encode           Encode a vector as JSON
+cereal_to_json          Serialize and deserialize the prototype of a
+                        data frame to JSON

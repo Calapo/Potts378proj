@@ -1,0 +1,166 @@
+---
+title: "Model"
+author: "Carter Potts"
+format:
+  html:
+    code-fold: true
+---
+
+```{r}
+#install.packages("pins")
+library(pins)
+#install.packages("vetiver")
+library(vetiver)
+```
+```{python}
+import vetiver
+```
+
+```{r}
+library(reticulate)
+
+py_config()
+```
+
+
+
+
+```{python}
+from pins import board_folder
+import pins
+from vetiver import vetiver_pin_write
+```
+
+
+```{python}
+from palmerpenguins import penguins
+from pandas import get_dummies
+import numpy as np
+from sklearn.linear_model import LinearRegression
+from sklearn import preprocessing
+```
+```{python}
+from vetiver import VetiverModel
+from vetiver import VetiverAPI
+```
+
+## Get Data
+
+
+```{python}
+df = penguins.load_penguins().dropna()
+
+df.head(3)
+```
+
+## Define Model and Fit
+
+
+```{python}
+X = get_dummies(df[['bill_length_mm', 'species', 'sex']], drop_first = True)
+y = df['body_mass_g']
+
+model = LinearRegression().fit(X, y)
+```
+
+## Get some information
+
+
+```{python}
+print(f"R^2 {model.score(X,y)}")
+print(f"Intercept {model.intercept_}")
+print(f"Columns {X.columns}")
+print(f"Coefficients {model.coef_}")
+```
+
+```{python}
+v = VetiverModel(model, model_name='penguin_model', prototype_data=X)
+ 
+```
+```{python}
+import os
+path = 'C:/Users/C25Carter.Potts/OneDrive - afacademy.af.edu/Documents/378_FinalProject/data/model/'
+os.makedirs(path, exist_ok=True)
+
+```
+
+Here we send it to a pin board that allows us to access the model later.
+
+```{python, eval=FALSE}
+ 
+# Create a board that allows pickled models
+board = pins.board_folder("C:/Users/C25Carter.Potts/OneDrive - afacademy.af.edu/Documents/378_FinalProject/data/model", allow_pickle_read=True)
+# Assuming 'v' is your VetiverModel object
+# Pin the model to the board
+vetiver.vetiver_pin_write(board, v, 'penguin_model')
+```
+
+```{python, eval=FALSE}
+ 
+# Create a board that allows pickled models
+board = pins.board_folder('data/model', allow_pickle_read=True)
+print(board)
+```
+
+```{python}
+import requests
+
+# GitHub Personal Access Token
+github_token = "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"
+
+# Your GitHub username
+github_username = "Calapo"
+
+# Repository name
+repo_name = "Potts378proj"
+
+# Request URL for creating a new repository
+create_repo_url = "https://api.github.com/user/repos"
+
+# Request headers with authorization token
+headers = {
+    "Authorization": f"token {github_token}",
+    "Content-Type": "application/json",
+}
+
+# Payload for creating the repository
+create_payload = {
+    "name": repo_name,
+    "description": "An empty public repository",
+    "private": False,  # Public repository
+}
+
+# Create the repository
+response = requests.post(create_repo_url, json=create_payload, headers=headers)
+
+# Check if the repository was created successfully
+if response.status_code == 201:
+    print(f"Repository '{repo_name}' created successfully.")
+
+    # URL for updating repository settings to set the default branch
+    set_default_branch_url = f"https://api.github.com/repos/{github_username}/{repo_name}"
+
+    # Payload to set the default branch
+    default_branch_payload = {
+        "default_branch": "master",  # Set your desired default branch name
+    }
+
+    # PATCH request to update the repository and set the default branch
+    response = requests.patch(set_default_branch_url, json=default_branch_payload, headers=headers)
+
+    # Check if the default branch was set successfully
+    if response.status_code == 200:
+        print("Default branch set successfully.")
+    else:
+        print("Failed to set default branch.")
+        print("Status code:", response.status_code)
+        print("Response:", response.json())
+else:
+    print("Failed to create repository.")
+    print("Status code:", response.status_code)
+    print("Response:", response.json())
+
+```
+
+
+
