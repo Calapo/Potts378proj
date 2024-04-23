@@ -6,36 +6,33 @@ format:
     code-fold: true
 ---
 
-```{r .cell-code}
-install.packages("pins")
+```{r}
+#install.packages("pins")
 library(pins)
-install.packages("vetiver")
+#install.packages("vetiver")
 library(vetiver)
 ```
 ```{python}
 import vetiver
 ```
 
-```{r .cell-code}
+```{r}
 library(reticulate)
 
 py_config()
 ```
-```{python .cell-code}
-
-```
 
 
 
 
-```{python .cell-code}
+```{python}
 from pins import board_folder
 import pins
 from vetiver import vetiver_pin_write
 ```
 
 
-```{python .cell-code}
+```{python}
 from palmerpenguins import penguins
 from pandas import get_dummies
 import numpy as np
@@ -50,7 +47,7 @@ from vetiver import VetiverAPI
 ## Get Data
 
 
-```{python .cell-code}
+```{python}
 df = penguins.load_penguins().dropna()
 
 df.head(3)
@@ -59,7 +56,7 @@ df.head(3)
 ## Define Model and Fit
 
 
-```{python .cell-code}
+```{python}
 X = get_dummies(df[['bill_length_mm', 'species', 'sex']], drop_first = True)
 y = df['body_mass_g']
 
@@ -69,31 +66,13 @@ model = LinearRegression().fit(X, y)
 ## Get some information
 
 
-```{python .cell-code}
+```{python}
 print(f"R^2 {model.score(X,y)}")
 print(f"Intercept {model.intercept_}")
 print(f"Columns {X.columns}")
 print(f"Coefficients {model.coef_}")
 ```
-```{python .cell-code}
-from joblib import dump
-import os
 
-# Define the model path and filename
-model_path = r"C:\Users\C25Carter.Potts\OneDrive - afacademy.af.edu\Documents\378_FinalProject\data\model"
-model_filename = "penguin_model"  # Define a filename for the model
-
-# Ensure the directory exists
-if not os.path.exists(model_path):
-    os.makedirs(model_path)
-
-# Combine path and filename for the full model path
-full_model_path = os.path.join(model_path, model_filename)
-
-# Save the model
-dump(model, full_model_path)
-
-```
 ```{python}
 v = VetiverModel(model, model_name='penguin_model', prototype_data=X)
  
@@ -111,8 +90,6 @@ Here we send it to a pin board that allows us to access the model later.
  
 # Create a board that allows pickled models
 board = pins.board_folder("C:/Users/C25Carter.Potts/OneDrive - afacademy.af.edu/Documents/378_FinalProject/data/model", allow_pickle_read=True)
-```
-```{python}
 # Assuming 'v' is your VetiverModel object
 # Pin the model to the board
 vetiver.vetiver_pin_write(board, v, 'penguin_model')

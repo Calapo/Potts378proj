@@ -9,10 +9,10 @@ format:
 ## Penguin Size and Mass by Sex and Species
 
 
-```{r .cell-code}
-install.packages("palmerpenguins")
-install.packages("dplyr")
-install.packages("ggplot2")
+```{r}
+#install.packages("palmerpenguins")
+#install.packages("dplyr")
+#install.packages("ggplot2")
 library(palmerpenguins)
 library(dplyr)
 library(ggplot2)
@@ -21,7 +21,7 @@ df <- palmerpenguins::penguins
 ```
 
 
-```{r .cell-code}
+```{r}
 df %>%
   group_by(species, sex) %>%
   summarise(
