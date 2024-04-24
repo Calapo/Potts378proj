@@ -1,2 +1,0 @@
-TORCH_INSTALL=1
-TORCH_HOME="libtorch/"

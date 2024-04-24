@@ -1,5 +1,0 @@
-"0","import os"
-"0","path = 'C:/Users/C25Carter.Potts/OneDrive - afacademy.af.edu/Documents/378_FinalProject/data/model/'"
-"0","os.makedirs(path, exist_ok=True)"
-"0",""
-"0",""

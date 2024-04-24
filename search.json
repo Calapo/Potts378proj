@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "378_FinalProject",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "Chap1_EDA.html",
+    "href": "Chap1_EDA.html",
+    "title": "Penguins EDA",
+    "section": "",
+    "text": "Code\n#install.packages(\"palmerpenguins\")\n#install.packages(\"dplyr\")\n#install.packages(\"ggplot2\")\nlibrary(palmerpenguins)\nlibrary(dplyr)\n\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\n\nCode\nlibrary(ggplot2)\n\ndf &lt;- palmerpenguins::penguins\n\n\n\n\nCode\ndf %&gt;%\n  group_by(species, sex) %&gt;%\n  summarise(\n    across(\n      where(is.numeric), \n      \\(x) mean(x, na.rm = TRUE)\n      ),\n    .groups = \"drop\"\n    ) %&gt;%\n  knitr::kable()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nspecies\nsex\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nyear\n\n\n\n\nAdelie\nfemale\n37.25753\n17.62192\n187.7945\n3368.836\n2008.055\n\n\nAdelie\nmale\n40.39041\n19.07260\n192.4110\n4043.493\n2008.055\n\n\nAdelie\nNA\n37.84000\n18.32000\n185.6000\n3540.000\n2007.000\n\n\nChinstrap\nfemale\n46.57353\n17.58824\n191.7353\n3527.206\n2007.971\n\n\nChinstrap\nmale\n51.09412\n19.25294\n199.9118\n3938.971\n2007.971\n\n\nGentoo\nfemale\n45.56379\n14.23793\n212.7069\n4679.741\n2008.069\n\n\nGentoo\nmale\n49.47377\n15.71803\n221.5410\n5484.836\n2008.066\n\n\nGentoo\nNA\n45.62500\n14.55000\n215.7500\n4587.500\n2008.400"
+  },
+  {
+    "objectID": "Chap1_EDA.html#penguin-size-and-mass-by-sex-and-species",
+    "href": "Chap1_EDA.html#penguin-size-and-mass-by-sex-and-species",
+    "title": "Penguins EDA",
+    "section": "",
+    "text": "Code\n#install.packages(\"palmerpenguins\")\n#install.packages(\"dplyr\")\n#install.packages(\"ggplot2\")\nlibrary(palmerpenguins)\nlibrary(dplyr)\n\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\n\nCode\nlibrary(ggplot2)\n\ndf &lt;- palmerpenguins::penguins\n\n\n\n\nCode\ndf %&gt;%\n  group_by(species, sex) %&gt;%\n  summarise(\n    across(\n      where(is.numeric), \n      \\(x) mean(x, na.rm = TRUE)\n      ),\n    .groups = \"drop\"\n    ) %&gt;%\n  knitr::kable()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nspecies\nsex\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nyear\n\n\n\n\nAdelie\nfemale\n37.25753\n17.62192\n187.7945\n3368.836\n2008.055\n\n\nAdelie\nmale\n40.39041\n19.07260\n192.4110\n4043.493\n2008.055\n\n\nAdelie\nNA\n37.84000\n18.32000\n185.6000\n3540.000\n2007.000\n\n\nChinstrap\nfemale\n46.57353\n17.58824\n191.7353\n3527.206\n2007.971\n\n\nChinstrap\nmale\n51.09412\n19.25294\n199.9118\n3938.971\n2007.971\n\n\nGentoo\nfemale\n45.56379\n14.23793\n212.7069\n4679.741\n2008.069\n\n\nGentoo\nmale\n49.47377\n15.71803\n221.5410\n5484.836\n2008.066\n\n\nGentoo\nNA\n45.62500\n14.55000\n215.7500\n4587.500\n2008.400"
+  },
+  {
+    "objectID": "Chap1_EDA.html#penguin-size-vs-mass-by-species",
+    "href": "Chap1_EDA.html#penguin-size-vs-mass-by-species",
+    "title": "Penguins EDA",
+    "section": "Penguin Size vs Mass by Species",
+    "text": "Penguin Size vs Mass by Species\n\n\nCode\ndf %&gt;%\n  ggplot(aes(x = bill_length_mm, y = body_mass_g, color = species)) +\n  geom_point() + \n  geom_smooth(method = \"lm\")\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 2 rows containing non-finite values (`stat_smooth()`).\n\n\nWarning: Removed 2 rows containing missing values (`geom_point()`)."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "Chap1_Model.html",
+    "href": "Chap1_Model.html",
+    "title": "Model",
+    "section": "",
+    "text": "Code\n#install.packages(\"pins\")\nlibrary(pins)\n#install.packages(\"vetiver\")\nlibrary(vetiver)\nCode\nimport vetiver\nCode\nlibrary(reticulate)\n\n\nWarning: package 'reticulate' was built under R version 4.3.3\n\n\nCode\npy_config()\n\n\npython:         C:/Users/C25Carter.Potts/OneDrive - afacademy.af.edu/Documents/378_FinalProject/.venv/Scripts/python.exe\nlibpython:      C:/Program Files/Python39/python39.dll\npythonhome:     C:/Users/C25Carter.Potts/OneDrive - afacademy.af.edu/Documents/378_FinalProject/.venv\nversion:        3.9.5 (tags/v3.9.5:0a7dcbd, May  3 2021, 17:27:52) [MSC v.1928 64 bit (AMD64)]\nArchitecture:   64bit\nnumpy:          C:/Users/C25Carter.Potts/OneDrive - afacademy.af.edu/Documents/378_FinalProject/.venv/Lib/site-packages/numpy\nnumpy_version:  1.26.4\n\nNOTE: Python version was forced by VIRTUAL_ENV\nCode\nfrom pins import board_folder\nimport pins\nfrom vetiver import vetiver_pin_write\nCode\nfrom palmerpenguins import penguins\nfrom pandas import get_dummies\nimport numpy as np\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn import preprocessing\nCode\nfrom vetiver import VetiverModel\nfrom vetiver import VetiverAPI"
+  },
+  {
+    "objectID": "Chap1_Model.html#get-data",
+    "href": "Chap1_Model.html#get-data",
+    "title": "Model",
+    "section": "Get Data",
+    "text": "Get Data\n\n\nCode\ndf = penguins.load_penguins().dropna()\n\ndf.head(3)\n\n\n  species     island  bill_length_mm  ...  body_mass_g     sex  year\n0  Adelie  Torgersen            39.1  ...       3750.0    male  2007\n1  Adelie  Torgersen            39.5  ...       3800.0  female  2007\n2  Adelie  Torgersen            40.3  ...       3250.0  female  2007\n\n[3 rows x 8 columns]"
+  },
+  {
+    "objectID": "Chap1_Model.html#define-model-and-fit",
+    "href": "Chap1_Model.html#define-model-and-fit",
+    "title": "Model",
+    "section": "Define Model and Fit",
+    "text": "Define Model and Fit\n\n\nCode\nX = get_dummies(df[['bill_length_mm', 'species', 'sex']], drop_first = True)\ny = df['body_mass_g']\n\nmodel = LinearRegression().fit(X, y)"
+  },
+  {
+    "objectID": "Chap1_Model.html#get-some-information",
+    "href": "Chap1_Model.html#get-some-information",
+    "title": "Model",
+    "section": "Get some information",
+    "text": "Get some information\n\n\nCode\nprint(f\"R^2 {model.score(X,y)}\")\n\n\nR^2 0.8555368759537614\n\n\nCode\nprint(f\"Intercept {model.intercept_}\")\n\n\nIntercept 2169.269720939398\n\n\nCode\nprint(f\"Columns {X.columns}\")\n\n\nColumns Index(['bill_length_mm', 'species_Chinstrap', 'species_Gentoo', 'sex_male'], dtype='object')\n\n\nCode\nprint(f\"Coefficients {model.coef_}\")\n\n\nCoefficients [  32.53688677 -298.76553447 1094.86739145  547.36692408]\n\n\n\n\nCode\nv = VetiverModel(model, model_name='penguin_model', prototype_data=X)\n \n\n\n\n\nCode\nimport os\npath = 'C:/Users/C25Carter.Potts/OneDrive - afacademy.af.edu/Documents/378_FinalProject/data/model/'\nos.makedirs(path, exist_ok=True)\n\n\nHere we send it to a pin board that allows us to access the model later.\n\n\nCode\n# Create a board that allows pickled models\nboard = pins.board_folder(\"C:/Users/C25Carter.Potts/OneDrive - afacademy.af.edu/Documents/378_FinalProject/data/model\", allow_pickle_read=True)\n# Assuming 'v' is your VetiverModel object\n# Pin the model to the board\nvetiver.vetiver_pin_write(board, v, 'penguin_model')\n\n\n\n\nCode\n# Create a board that allows pickled models\nboard = pins.board_folder('data/model', allow_pickle_read=True)\nprint(board)\n\n\n\n\nCode\nimport requests\n\n# GitHub Personal Access Token\ngithub_token = \"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\"\n\n# Your GitHub username\ngithub_username = \"Calapo\"\n\n# Repository name\nrepo_name = \"Potts378proj\"\n\n# Request URL for creating a new repository\ncreate_repo_url = \"https://api.github.com/user/repos\"\n\n# Request headers with authorization token\nheaders = {\n    \"Authorization\": f\"token {github_token}\",\n    \"Content-Type\": \"application/json\",\n}\n\n# Payload for creating the repository\ncreate_payload = {\n    \"name\": repo_name,\n    \"description\": \"An empty public repository\",\n    \"private\": False,  # Public repository\n}\n\n# Create the repository\nresponse = requests.post(create_repo_url, json=create_payload, headers=headers)\n\n# Check if the repository was created successfully\nif response.status_code == 201:\n    print(f\"Repository '{repo_name}' created successfully.\")\n\n    # URL for updating repository settings to set the default branch\n    set_default_branch_url = f\"https://api.github.com/repos/{github_username}/{repo_name}\"\n\n    # Payload to set the default branch\n    default_branch_payload = {\n        \"default_branch\": \"master\",  # Set your desired default branch name\n    }\n\n    # PATCH request to update the repository and set the default branch\n    response = requests.patch(set_default_branch_url, json=default_branch_payload, headers=headers)\n\n    # Check if the default branch was set successfully\n    if response.status_code == 200:\n        print(\"Default branch set successfully.\")\n    else:\n        print(\"Failed to set default branch.\")\n        print(\"Status code:\", response.status_code)\n        print(\"Response:\", response.json())\nelse:\n    print(\"Failed to create repository.\")\n    print(\"Status code:\", response.status_code)\n    print(\"Response:\", response.json())\n\n\nFailed to create repository.\nStatus code: 401\nResponse: {'message': 'Bad credentials', 'documentation_url': 'https://docs.github.com/rest'}"
+  }
+]
