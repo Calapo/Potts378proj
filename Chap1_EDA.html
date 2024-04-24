@@ -149,11 +149,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#penguin-size-and-mass-by-sex-and-species" id="toc-penguin-size-and-mass-by-sex-and-species" class="nav-link active" data-scroll-target="#penguin-size-and-mass-by-sex-and-species">Penguin Size and Mass by Sex and Species</a></li>
-  <li><a href="#penguin-size-vs-mass-by-species" id="toc-penguin-size-vs-mass-by-species" class="nav-link" data-scroll-target="#penguin-size-vs-mass-by-species">Penguin Size vs Mass by Species</a></li>
-  <li><a href="#penguin-size-vs-flipper-length-by-species" id="toc-penguin-size-vs-flipper-length-by-species" class="nav-link" data-scroll-target="#penguin-size-vs-flipper-length-by-species">Penguin Size vs Flipper Length by Species</a></li>
-  <li><a href="#flipper-size-vs-mass-by-sex-of-adelie-penguins" id="toc-flipper-size-vs-mass-by-sex-of-adelie-penguins" class="nav-link" data-scroll-target="#flipper-size-vs-mass-by-sex-of-adelie-penguins">Flipper Size vs Mass by Sex of Adelie Penguins</a></li>
-  <li><a href="#flipper-size-vs-mass-by-sex-of-gentoo-penguins" id="toc-flipper-size-vs-mass-by-sex-of-gentoo-penguins" class="nav-link" data-scroll-target="#flipper-size-vs-mass-by-sex-of-gentoo-penguins">Flipper Size vs Mass by Sex of Gentoo Penguins</a></li>
-  <li><a href="#flipper-size-vs-mass-by-sex-of-chinstrap-penguins" id="toc-flipper-size-vs-mass-by-sex-of-chinstrap-penguins" class="nav-link" data-scroll-target="#flipper-size-vs-mass-by-sex-of-chinstrap-penguins">Flipper Size vs Mass by Sex of Chinstrap Penguins</a></li>
+  <li><a href="#penguin-bill-length-vs-mass-by-species" id="toc-penguin-bill-length-vs-mass-by-species" class="nav-link" data-scroll-target="#penguin-bill-length-vs-mass-by-species">Penguin Bill Length vs Mass by Species</a></li>
+  <li><a href="#penguin-bill-length-vs-flipper-length-by-species" id="toc-penguin-bill-length-vs-flipper-length-by-species" class="nav-link" data-scroll-target="#penguin-bill-length-vs-flipper-length-by-species">Penguin Bill Length vs Flipper Length by Species</a></li>
+  <li><a href="#penguin-bill-length-vs-bill-depth-by-species" id="toc-penguin-bill-length-vs-bill-depth-by-species" class="nav-link" data-scroll-target="#penguin-bill-length-vs-bill-depth-by-species">Penguin Bill Length vs Bill Depth by Species</a></li>
+  <li><a href="#penguin-flipper-length-vs-mass-by-sex-in-adelie-penguins" id="toc-penguin-flipper-length-vs-mass-by-sex-in-adelie-penguins" class="nav-link" data-scroll-target="#penguin-flipper-length-vs-mass-by-sex-in-adelie-penguins">Penguin Flipper Length vs Mass by Sex in Adelie Penguins</a></li>
+  <li><a href="#penguin-flipper-length-vs-mass-by-sex-in-chinstrap-penguins" id="toc-penguin-flipper-length-vs-mass-by-sex-in-chinstrap-penguins" class="nav-link" data-scroll-target="#penguin-flipper-length-vs-mass-by-sex-in-chinstrap-penguins">Penguin Flipper Length vs Mass by Sex in Chinstrap Penguins</a></li>
+  <li><a href="#penguin-flipper-length-vs-mass-by-sex-in-gentoo-penguins" id="toc-penguin-flipper-length-vs-mass-by-sex-in-gentoo-penguins" class="nav-link" data-scroll-target="#penguin-flipper-length-vs-mass-by-sex-in-gentoo-penguins">Penguin Flipper Length vs Mass by Sex in Gentoo Penguins</a></li>
   </ul>
 </nav>
     </div>
@@ -332,16 +333,16 @@ Attaching package: 'dplyr'</code></pre>
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>adelie <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">species =</span> <span class="st">'Adelie'</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>gentoo <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">species =</span> <span class="st">'Gentoo'</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>chinstrap <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">species =</span> <span class="st">'Chinstrap'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(species <span class="sc">==</span> <span class="st">'Adelie'</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>chinstrap <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(species <span class="sc">==</span> <span class="st">'Chinstrap'</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>gentoo <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(species <span class="sc">==</span> <span class="st">'Gentoo'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
-<section id="penguin-size-vs-mass-by-species" class="level2">
-<h2 class="anchored" data-anchor-id="penguin-size-vs-mass-by-species">Penguin Size vs Mass by Species</h2>
+<section id="penguin-bill-length-vs-mass-by-species" class="level2">
+<h2 class="anchored" data-anchor-id="penguin-bill-length-vs-mass-by-species">Penguin Bill Length vs Mass by Species</h2>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -366,8 +367,8 @@ Attaching package: 'dplyr'</code></pre>
 </div>
 </div>
 </section>
-<section id="penguin-size-vs-flipper-length-by-species" class="level2">
-<h2 class="anchored" data-anchor-id="penguin-size-vs-flipper-length-by-species">Penguin Size vs Flipper Length by Species</h2>
+<section id="penguin-bill-length-vs-flipper-length-by-species" class="level2">
+<h2 class="anchored" data-anchor-id="penguin-bill-length-vs-flipper-length-by-species">Penguin Bill Length vs Flipper Length by Species</h2>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -379,28 +380,20 @@ Attaching package: 'dplyr'</code></pre>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing non-finite outside the scale range
-(`stat_smooth()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing missing values or values outside the scale range
-(`geom_point()`).</code></pre>
-</div>
 <div class="cell-output-display">
 <p><img src="Chap1_EDA_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
-<section id="flipper-size-vs-mass-by-sex-of-adelie-penguins" class="level2">
-<h2 class="anchored" data-anchor-id="flipper-size-vs-mass-by-sex-of-adelie-penguins">Flipper Size vs Mass by Sex of Adelie Penguins</h2>
+<section id="penguin-bill-length-vs-bill-depth-by-species" class="level2">
+<h2 class="anchored" data-anchor-id="penguin-bill-length-vs-bill-depth-by-species">Penguin Bill Length vs Bill Depth by Species</h2>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>adelie <span class="sc">%&gt;%</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g, <span class="at">color =</span> sex)) <span class="sc">+</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> bill_depth_mm, <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
@@ -418,25 +411,25 @@ Attaching package: 'dplyr'</code></pre>
 </div>
 </div>
 </section>
-<section id="flipper-size-vs-mass-by-sex-of-gentoo-penguins" class="level2">
-<h2 class="anchored" data-anchor-id="flipper-size-vs-mass-by-sex-of-gentoo-penguins">Flipper Size vs Mass by Sex of Gentoo Penguins</h2>
+<section id="penguin-flipper-length-vs-mass-by-sex-in-adelie-penguins" class="level2">
+<h2 class="anchored" data-anchor-id="penguin-flipper-length-vs-mass-by-sex-in-adelie-penguins">Penguin Flipper Length vs Mass by Sex in Adelie Penguins</h2>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>gentoo <span class="sc">%&gt;%</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g, <span class="at">color =</span> sex)) <span class="sc">+</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>adelie <span class="sc">%&gt;%</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">y =</span> flipper_length_mm, <span class="at">color =</span> sex)) <span class="sc">+</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing non-finite outside the scale range
+<pre><code>Warning: Removed 1 row containing non-finite outside the scale range
 (`stat_smooth()`).</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing missing values or values outside the scale range
+<pre><code>Warning: Removed 1 row containing missing values or values outside the scale range
 (`geom_point()`).</code></pre>
 </div>
 <div class="cell-output-display">
@@ -444,13 +437,31 @@ Attaching package: 'dplyr'</code></pre>
 </div>
 </div>
 </section>
-<section id="flipper-size-vs-mass-by-sex-of-chinstrap-penguins" class="level2">
-<h2 class="anchored" data-anchor-id="flipper-size-vs-mass-by-sex-of-chinstrap-penguins">Flipper Size vs Mass by Sex of Chinstrap Penguins</h2>
+<section id="penguin-flipper-length-vs-mass-by-sex-in-chinstrap-penguins" class="level2">
+<h2 class="anchored" data-anchor-id="penguin-flipper-length-vs-mass-by-sex-in-chinstrap-penguins">Penguin Flipper Length vs Mass by Sex in Chinstrap Penguins</h2>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>chinstrap <span class="sc">%&gt;%</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g, <span class="at">color =</span> sex)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>chinstrap <span class="sc">%&gt;%</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">y =</span> flipper_length_mm, <span class="at">color =</span> sex)) <span class="sc">+</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="Chap1_EDA_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="penguin-flipper-length-vs-mass-by-sex-in-gentoo-penguins" class="level2">
+<h2 class="anchored" data-anchor-id="penguin-flipper-length-vs-mass-by-sex-in-gentoo-penguins">Penguin Flipper Length vs Mass by Sex in Gentoo Penguins</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>gentoo <span class="sc">%&gt;%</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> body_mass_g, <span class="at">y =</span> flipper_length_mm, <span class="at">color =</span> sex)) <span class="sc">+</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -458,15 +469,15 @@ Attaching package: 'dplyr'</code></pre>
 <pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing non-finite outside the scale range
+<pre><code>Warning: Removed 1 row containing non-finite outside the scale range
 (`stat_smooth()`).</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing missing values or values outside the scale range
+<pre><code>Warning: Removed 1 row containing missing values or values outside the scale range
 (`geom_point()`).</code></pre>
 </div>
 <div class="cell-output-display">
-<p><img src="Chap1_EDA_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+<p><img src="Chap1_EDA_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 
