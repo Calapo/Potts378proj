@@ -318,6 +318,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>We will also create new datasets that are broken up into species.</p>
+<p>#<code>{python} df.dropna(inplace=True)</code></p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -482,6 +483,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Body Mass vs.&nbsp;Flipper Length (Gender)</strong>: Across all species, males generally have higher body mass and longer flippers than females. Males also exhibit a wider distribution, indicating greater variability in body mass and flipper length. However, the confidence intervals suggest overlapping characteristics between males and females within each species.</li>
 </ul>
 <p>Overall, while there’s a common positive trend between physical traits, each species has unique characteristics, with Gentoo penguins generally being the heaviest and longest, while Adelie penguins tend to be shorter and lighter. Chinstrap penguins consistently occupy the middle ground, exhibiting a blend of traits from the other two species.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#import duckdb</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#from palmerpenguins import penguins</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">#con = duckdb.connect('my-db.duckdb')</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">#df = penguins.load_penguins()</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">#con.execute('CREATE TABLE penguins AS SELECT * FROM df')</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">#con.close()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#con &lt;- DBI::dbConnect(</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#  duckdb::duckdb(), </span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#  dbdir = "my-db.duckdb"</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  )</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">#df &lt;- dplyr::tbl(con, "penguins")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 
 
 </section>
