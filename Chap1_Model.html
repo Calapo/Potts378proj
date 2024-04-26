@@ -151,13 +151,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#get-data" id="toc-get-data" class="nav-link active" data-scroll-target="#get-data">Get Data</a></li>
   <li><a href="#define-model-and-fit" id="toc-define-model-and-fit" class="nav-link" data-scroll-target="#define-model-and-fit">Define Model and Fit</a></li>
   <li><a href="#get-some-information" id="toc-get-some-information" class="nav-link" data-scroll-target="#get-some-information">Get some information</a></li>
-  <li><a href="#assign-features-and-labels" id="toc-assign-features-and-labels" class="nav-link" data-scroll-target="#assign-features-and-labels">Assign features and labels</a></li>
-  <li><a href="#split-the-dataset-into-training-and-testing-sets-70-training-30-testing" id="toc-split-the-dataset-into-training-and-testing-sets-70-training-30-testing" class="nav-link" data-scroll-target="#split-the-dataset-into-training-and-testing-sets-70-training-30-testing">Split the dataset into training and testing sets (70% training, 30% testing)</a></li>
-  <li><a href="#initialize-the-gradient-boosting-classifier" id="toc-initialize-the-gradient-boosting-classifier" class="nav-link" data-scroll-target="#initialize-the-gradient-boosting-classifier">Initialize the Gradient Boosting Classifier</a></li>
-  <li><a href="#train-the-model" id="toc-train-the-model" class="nav-link" data-scroll-target="#train-the-model">Train the model</a></li>
-  <li><a href="#make-predictions" id="toc-make-predictions" class="nav-link" data-scroll-target="#make-predictions">Make predictions</a></li>
-  <li><a href="#calculate-the-accuracy" id="toc-calculate-the-accuracy" class="nav-link" data-scroll-target="#calculate-the-accuracy">Calculate the accuracy</a></li>
-  <li><a href="#display-accuracy" id="toc-display-accuracy" class="nav-link" data-scroll-target="#display-accuracy">Display accuracy</a></li>
   </ul>
 </nav>
     </div>
@@ -336,7 +329,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(board)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;pins.boards.BaseBoard object at 0x000002047FD77160&gt;</code></pre>
+<pre><code>&lt;pins.boards.BaseBoard object at 0x0000017D0FD1AF70&gt;</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -400,39 +393,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb23-56"><a href="#cb23-56" aria-hidden="true" tabindex="-1"></a><span class="co">#    print("Response:", response.json())</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>#<code>{python} from sklearn.ensemble import GradientBoostingClassifier from sklearn.model_selection import train_test_split from sklearn.metrics import accuracy_score, classification_report</code></p>
-<p>#```{python} import pandas import numpy from sklearn.datasets import load_iris # Using Iris dataset for demonstration from sklearn.model_selection import train_test_split from sklearn.ensemble import GradientBoostingClassifier from sklearn.metrics import accuracy_score</p>
-<p>dfPeng = pandas.DataFrame(df)</p>
-<p>iris = load_iris() X = iris.dfPeng # Features y = iris.target # Labels</p>
-<p>label_encoder = LabelEncoder() data[‘species_encoded’] = label_encoder.fit_transform(data[‘species’])</p>
-</section>
-<section id="assign-features-and-labels" class="level1">
-<h1>Assign features and labels</h1>
-<p>X = data[[‘body_mass_g’, ‘bill_length_mm’, ‘flipper_length_mm’]] # Features y = data[‘species_encoded’] # Labels</p>
-</section>
-<section id="split-the-dataset-into-training-and-testing-sets-70-training-30-testing" class="level1">
-<h1>Split the dataset into training and testing sets (70% training, 30% testing)</h1>
-<p>X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)</p>
-</section>
-<section id="initialize-the-gradient-boosting-classifier" class="level1">
-<h1>Initialize the Gradient Boosting Classifier</h1>
-<p>gb_classifier = GradientBoostingClassifier(n_estimators=100, learning_rate=0.1, max_depth=3, random_state=42)</p>
-</section>
-<section id="train-the-model" class="level1">
-<h1>Train the model</h1>
-<p>gb_classifier.fit(X_train, y_train)</p>
-</section>
-<section id="make-predictions" class="level1">
-<h1>Make predictions</h1>
-<p>y_pred = gb_classifier.predict(X_test)</p>
-</section>
-<section id="calculate-the-accuracy" class="level1">
-<h1>Calculate the accuracy</h1>
-<p>accuracy = accuracy_score(y_test, y_pred)</p>
-</section>
-<section id="display-accuracy" class="level1">
-<h1>Display accuracy</h1>
-<p>print(f’Accuracy: {accuracy * 100:.2f}%’) ```</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">#from sklearn.ensemble import GradientBoostingClassifier</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co">#from sklearn.model_selection import train_test_split</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co">#from sklearn.metrics import accuracy_score, classification_report</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">#import pandas</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co">#import numpy</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co">#from sklearn.datasets import load_iris  # Using Iris dataset for demonstration</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co">#from sklearn.model_selection import train_test_split</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="co">#from sklearn.ensemble import GradientBoostingClassifier</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="co">#from sklearn.metrics import accuracy_score</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="co">#dfPeng = pandas.DataFrame(df)</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="co">#iris = load_iris()</span></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="co">#X = iris.dfPeng  # Features</span></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="co">#y = iris.target  # Labels</span></span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a><span class="co">#label_encoder = LabelEncoder()</span></span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a><span class="co">#data['species_encoded'] = label_encoder.fit_transform(data['species'])</span></span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign features and labels</span></span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a><span class="co">#X = data[['body_mass_g', 'bill_length_mm', 'flipper_length_mm']]  # Features</span></span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a><span class="co">#y = data['species_encoded']  # Labels</span></span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Split the dataset into training and testing sets (70% training, 30% testing)</span></span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a><span class="co">#X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)</span></span>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize the Gradient Boosting Classifier</span></span>
+<span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a><span class="co">#gb_classifier = GradientBoostingClassifier(n_estimators=100, learning_rate=0.1, max_depth=3, random_state=42)</span></span>
+<span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Train the model</span></span>
+<span id="cb25-28"><a href="#cb25-28" aria-hidden="true" tabindex="-1"></a><span class="co">#gb_classifier.fit(X_train, y_train)</span></span>
+<span id="cb25-29"><a href="#cb25-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-30"><a href="#cb25-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Make predictions</span></span>
+<span id="cb25-31"><a href="#cb25-31" aria-hidden="true" tabindex="-1"></a><span class="co">#y_pred = gb_classifier.predict(X_test)</span></span>
+<span id="cb25-32"><a href="#cb25-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-33"><a href="#cb25-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the accuracy</span></span>
+<span id="cb25-34"><a href="#cb25-34" aria-hidden="true" tabindex="-1"></a><span class="co">#accuracy = accuracy_score(y_test, y_pred)</span></span>
+<span id="cb25-35"><a href="#cb25-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-36"><a href="#cb25-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Display accuracy</span></span>
+<span id="cb25-37"><a href="#cb25-37" aria-hidden="true" tabindex="-1"></a><span class="co">#print(f'Accuracy: {accuracy * 100:.2f}%')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 
 
 </section>
